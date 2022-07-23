@@ -218,7 +218,7 @@ else
    add_opt COMMAND no
 fi
 
-check_lib '' GETOPT_LONG "$CLIB" getopt_long
+#TODO: fix bug in getopt_long: check_lib '' GETOPT_LONG "$CLIB" getopt_long
 
 if [ "$HAVE_DYLIB" = 'no' ] && [ "$HAVE_DYNAMIC" = 'yes' ]; then
    die 1 'Error: Dynamic loading of libretro is enabled, but your platform does not appear to have dlopen(), use --disable-dynamic or --with-libretro="-lretro".'
