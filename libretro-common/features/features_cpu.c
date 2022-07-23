@@ -248,7 +248,7 @@ retro_time_t cpu_features_get_time_usec(void)
    return (svcGetSystemTick() * 10) / 192;
 #elif defined(_3DS)
    return osGetTime() * 1000;
-#elif defined(_POSIX_MONOTONIC_CLOCK) || defined(__QNX__) || defined(ANDROID) || defined(__MACH__)
+#elif defined(_POSIX_MONOTONIC_CLOCK) || defined(__QNX__) || defined(ANDROID) || defined(__MACH__) || defined (__redox__)
    struct timespec tv = {0};
    if (ra_clock_gettime(CLOCK_MONOTONIC, &tv) < 0)
       return 0;

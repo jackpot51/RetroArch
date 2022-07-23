@@ -53,6 +53,8 @@ elif [ "$OS" = 'Win32' ]; then
    DYLIB=
 elif [ "$OS" = 'Cygwin' ]; then
    die 1 'Error: Cygwin is not a supported platform. See https://bot.libretro.com/docs/compilation/windows/'
+elif [ "$OS" = 'Redox' ]; then
+    DYLIB=""
 elif [ "$OS" = 'SunOS' ]; then
    SORT='gsort'
 fi

@@ -5,6 +5,7 @@ if [ -n "${CROSS_COMPILE:=}" ]; then
 	case "$CROSS_COMPILE" in
 		*'-mingw32'*) OS='Win32';;
 		*'-msdosdjgpp'*) OS='DOS';;
+		*'-redox'*) OS='Redox';;
 		*);;
 	esac
 fi
@@ -17,6 +18,7 @@ if [ -z "$CROSS_COMPILE" ] || [ -z "$OS" ]; then
 		'CYGWIN'*) OS='Cygwin';;
 		'Haiku') OS='Haiku';;
 		'MINGW'*) OS='Win32';;
+		'Redox') OS='Redox';;
 		'SunOS') OS='SunOS';;
 		*) OS="Win32";;
 	esac
