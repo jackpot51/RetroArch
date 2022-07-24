@@ -63,6 +63,11 @@ ifneq ($(findstring FPGA,$(OS)),)
    DEFINES += -DHAVE_FPGA
 endif
 
+ifneq ($(findstring Redox,$(OS)),)
+   #TODO: make this work on all targets
+   LDFLAGS += $(shell x86_64-unknown-redox-pkg-config --libs osmesa)
+endif
+
 ifneq ($(findstring Win32,$(OS)),)
    LDFLAGS += -static-libgcc -lwinmm
 endif

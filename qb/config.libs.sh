@@ -399,6 +399,9 @@ if [ "$HAVE_OPENGL" != 'no' ] && [ "$HAVE_OPENGLES" != 'yes' ]; then
    if [ "$OS" = 'Darwin' ]; then
       check_header '' OPENGL "OpenGL/gl.h"
       check_lib '' OPENGL "-framework OpenGL"
+   elif [ "$OS" = 'Redox' ]; then
+      check_header '' OPENGL "GL/gl.h"
+      check_lib '' OPENGL -lOSMesa
    elif [ "$OS" = 'Win32' ]; then
       check_header '' OPENGL "GL/gl.h"
       check_lib '' OPENGL -lopengl32
