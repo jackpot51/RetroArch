@@ -189,6 +189,9 @@ if [ "$HAVE_NETWORKING" != 'no' ]; then
    # WinXP+ implements getaddrinfo()
    if [ "$OS" = 'Win32' ]; then
       HAVE_GETADDRINFO=yes
+   elif [ "$OS" = 'Redox' ]; then
+      HAVE_GETADDRINFO=yes
+      HAVE_SOCKET_LEGACY=yes # TODO: implement ifaddrs.h
    else
       check_lib '' GETADDRINFO "$SOCKETLIB" getaddrinfo
       if [ "$HAVE_GETADDRINFO" != 'yes' ]; then
