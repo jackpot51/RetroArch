@@ -221,8 +221,8 @@
 /* Do not use windowed mode for WinRT and Winapi Family builds on the Xbox UWP with fixed resolution shrinks the image into the left top corner of the screen with some libretro cores */
 #define DEFAULT_WINDOWED_FULLSCREEN false
 #else
-#define DEFAULT_WINDOWED_FULLSCREEN true 
-#endif 
+#define DEFAULT_WINDOWED_FULLSCREEN true
+#endif
 
 /* Enable automatic switching of the screen refresh rate when using the specified screen mode(s),
  * based on running core/content */
@@ -369,7 +369,7 @@
 #define DEFAULT_FRAME_DELAY_AUTO false
 
 /* Inserts black frame(s) inbetween frames.
- * Useful for Higher Hz monitors (set to multiples of 60 Hz) who want to play 60 Hz 
+ * Useful for Higher Hz monitors (set to multiples of 60 Hz) who want to play 60 Hz
  * material with eliminated  ghosting. video_refresh_rate should still be configured
  * as if it is a 60 Hz monitor (divide refresh rate by multiple of 60 Hz).
  */
@@ -456,7 +456,7 @@
 /* Should we expand the colour gamut when using hdr */
 #define DEFAULT_VIDEO_HDR_EXPAND_GAMUT true
 
-/* When presets are saved they will be saved using the #reference 
+/* When presets are saved they will be saved using the #reference
  * directive by default */
 #define DEFAULT_VIDEO_SHADER_PRESET_SAVE_REFERENCE_ENABLE true
 
@@ -1054,7 +1054,7 @@ static const bool audio_enable_menu_bgm    = false;
 /*Desired duration of the screenshot notification*/
 #define DEFAULT_NOTIFICATION_SHOW_SCREENSHOT_DURATION 0
 
-/* Display a white flashing effect with the desired 
+/* Display a white flashing effect with the desired
  * duration when taking a screenshot*/
 #define DEFAULT_NOTIFICATION_SHOW_SCREENSHOT_FLASH 0
 #endif
@@ -1171,7 +1171,7 @@ static const bool audio_enable_menu_bgm    = false;
 #if defined(RETROFW) || defined(MIYOO)
 /*RETROFW jz4760 has signficant slowdown with default settings */
 #define DEFAULT_REWIND_BUFFER_SIZE (1 << 20)
-#define DEFAULT_REWIND_BUFFER_SIZE_STEP 1 
+#define DEFAULT_REWIND_BUFFER_SIZE_STEP 1
 #define DEFAULT_REWIND_GRANULARITY 6
 #else
 /* The buffer size for the rewind buffer. This needs to be about
@@ -1185,7 +1185,7 @@ static const bool audio_enable_menu_bgm    = false;
 #define DEFAULT_REWIND_GRANULARITY 1
 #endif
 /* Pause gameplay when gameplay loses focus. */
-#if defined(EMSCRIPTEN)
+#if defined(EMSCRIPTEN) || defined(__redox__)
 #define DEFAULT_PAUSE_NONACTIVE false
 #else
 #define DEFAULT_PAUSE_NONACTIVE true
@@ -1526,7 +1526,7 @@ static const bool ui_companion_toggle = false;
 #define DEFAULT_CONTENT_RUNTIME_LOG true
 #endif
 
-/* Keep track of how long each content has been running 
+/* Keep track of how long each content has been running
  * for over time (ignores core) */
 #define DEFAULT_CONTENT_RUNTIME_LOG_AGGREGATE false
 
